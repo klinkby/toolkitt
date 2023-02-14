@@ -7,4 +7,13 @@
 		<LangVersion>10</LangVersion>
   </PropertyGroup>
 
+  <PropertyGroup>
+    <Authors>@klinkby</Authors>
+    <RepositoryUrl>https://github.com/klinkby/toolkitt</RepositoryUrl>
+    <RootNamespace>Klinkby.Toolkitt</RootNamespace>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+  </PropertyGroup>
 </Project>
