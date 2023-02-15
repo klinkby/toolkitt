@@ -1,19 +1,39 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net6</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-		<LangVersion>10</LangVersion>
+    <WarningsAsErrors>Nullable</WarningsAsErrors>
+    <LangVersion>10</LangVersion>
+    <RootNamespace>Klinkby.Toolkitt</RootNamespace>
+    <Configurations>Debug;Release</Configurations>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <TargetFrameworks>net6.0</TargetFrameworks>
+    <IsTrimmable>true</IsTrimmable>
   </PropertyGroup>
 
   <PropertyGroup>
     <Authors>@klinkby</Authors>
     <RepositoryUrl>https://github.com/klinkby/toolkitt</RepositoryUrl>
+    <AssemblyName>Klinkby.Toolkitt</AssemblyName>
+    <AssemblyTitle>Klinkby.Toolkitt</AssemblyTitle>
     <RootNamespace>Klinkby.Toolkitt</RootNamespace>
+    <PackageId>Klinkby.Toolkitt</PackageId>
+    <PackageTags>Tool Utility Extension Guard String EventHandler</PackageTags>
+    <Description>Just an evolving collection of general purpose coding productivity tools</Description>
   </PropertyGroup>
 
   <PropertyGroup>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
   </PropertyGroup>
+
+  <PropertyGroup>
+      <PackageLicenseFile>LICENSE</PackageLicenseFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+      <None Include="../../LICENSE" Pack="true" PackagePath=""/>
+  </ItemGroup>
 </Project>
