@@ -23,8 +23,8 @@ public static class ObjectGuardExtensions
     /// <exception cref="ArgumentNullException">Thrown if value is null</exception>
     public static T AssertNotNull<T>(
         [NotNull] this T? value,
-        [CallerArgumentExpression("value")] string? argumentName = null) where T: class =>
-            value ?? throw new ArgumentNullException(argumentName);
+        [CallerArgumentExpression("value")] string? argumentName = null) where T: class => 
+           value ?? throw new ArgumentNullException(argumentName);
 
     /// <summary>
     /// Guard clause validate value is non-null and match a specific regular expression pattern
@@ -44,7 +44,10 @@ public static class ObjectGuardExtensions
     /// <exception cref="ArgumentOutOfRangeException">Thrown if value does not match expression</exception>
     public static string AssertMatchesRegex(
         [NotNull] this string? value,
-        /* [StringSyntax(StringSyntaxAttribute.Regex)] */ string pattern,
+#if NET7_0_OR_GREATER
+        [StringSyntax(StringSyntaxAttribute.Regex)]
+#endif
+        string pattern,
         RegexOptions options = default,
         [CallerArgumentExpression("value")] string? argumentName = null) => 
         Regex.IsMatch(value ?? throw new ArgumentNullException(argumentName), pattern, options)
