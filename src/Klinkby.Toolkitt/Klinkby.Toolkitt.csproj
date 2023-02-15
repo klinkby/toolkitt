@@ -21,6 +21,7 @@
     <AssemblyTitle>Klinkby.Toolkitt</AssemblyTitle>
     <RootNamespace>Klinkby.Toolkitt</RootNamespace>
     <PackageId>Klinkby.Toolkitt</PackageId>
+    <PackageVersion>1.0.1</PackageVersion>
     <PackageTags>Tool Utility Extension Guard String EventHandler</PackageTags>
     <Description>Just an evolving collection of general purpose coding productivity tools</Description>
   </PropertyGroup>
@@ -31,9 +32,11 @@
 
   <PropertyGroup>
       <PackageLicenseFile>LICENSE</PackageLicenseFile>
+      <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
 
   <ItemGroup>
       <None Include="../../LICENSE" Pack="true" PackagePath=""/>
+      <None Include="../../README.md" Pack="true" PackagePath=""/>
   </ItemGroup>
 </Project>
