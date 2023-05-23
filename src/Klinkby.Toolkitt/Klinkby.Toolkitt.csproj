@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <ImplicitUsings>enable</ImplicitUsings>
@@ -21,7 +21,7 @@
     <AssemblyTitle>Klinkby.Toolkitt</AssemblyTitle>
     <RootNamespace>Klinkby.Toolkitt</RootNamespace>
     <PackageId>Klinkby.Toolkitt</PackageId>
-    <PackageVersion>1.0.2</PackageVersion>
+    <PackageVersion>1.0.3</PackageVersion>
     <PackageIcon>kitt.png</PackageIcon>
     <PackageTags>Tool Utility Extension Guard String EventHandler</PackageTags>
     <Description>Just an evolving collection of general purpose coding productivity tools</Description>
