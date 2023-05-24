@@ -109,8 +109,4 @@ public static class FuncExtensions
     /// <returns></returns>
     public static Func<T1, T2, T3, TResult> UnCurry<T1, T2, T3, TResult>(this Func<T1, Func<T2, Func<T3, TResult>>> func)
         => (t1, t2, t3) => func(t1)(t2)(t3);
-
-    // 1
-    public static Action<T2> ApplyPartial<T1, T2>(this Action<T1, T2> function, T1 arg1)
-        => (arg2) => function(arg1, arg2);
 }
