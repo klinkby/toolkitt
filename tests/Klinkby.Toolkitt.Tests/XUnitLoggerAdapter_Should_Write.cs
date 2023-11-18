@@ -6,6 +6,11 @@ namespace Klinkby.Toolkitt.Tests;
 
 public class XUnitLoggerAdapter_Should_Write
 {
+    private readonly ITestOutputHelper _output;
+   
+    public XUnitLoggerAdapter_Should_Write(ITestOutputHelper output) 
+        => _output = output;
+    
     [Trait("Category", "Unit")]
     [Theory]
     [InlineData("\t")]
@@ -55,5 +60,22 @@ public class XUnitLoggerAdapter_Should_Write
         
         // assert
         mock.Verify(x => x.WriteLine(It.IsAny<string>()), Times.Never());
+    }
+
+    [Trait("Category", "Unit")]
+    [Theory]
+    [InlineData("Foo")]
+    public void Log_Should_Not_Throw(string message)
+    {
+        // arrange
+        var logger = _output.ToILogger();
+        
+        // act
+        var exception = Record.Exception(() => 
+            logger.LogInformation(message)
+        );
+
+        // assert
+        Assert.Null(exception);
     }
 }
