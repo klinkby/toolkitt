@@ -5,7 +5,7 @@
 
 ## Summary
 
-Just an evolving collection of general purpose coding productivity tools. 
+Just an evolving collection of general purpose coding productivity tools.
 \>95% test coverage.
 
 ## Contents
@@ -13,7 +13,8 @@ Just an evolving collection of general purpose coding productivity tools.
 - Explicit parameter validation guard extension methods
 - Thread safe event raiser extension methods
 - Apply, Curry, Uncurry for `Func<T>`
-- Apply for `Action<T>` 
+- Apply for `Action<T>`
+- Adapter for passing Extensions.ILogger to XUnit
 
 ## License
 
