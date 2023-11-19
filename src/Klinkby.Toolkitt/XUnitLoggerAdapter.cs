@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using System.Diagnostics.Contracts;
+using Microsoft.Extensions.Logging;
 using Xunit.Abstractions;
 
 namespace Klinkby.Toolkitt;
@@ -17,6 +18,7 @@ internal class XUnitLoggerAdapter : ILogger
         _separator = separator;
     }
 
+    [Pure]
     private string Indent 
         => new(' ', _indent);
 
@@ -27,6 +29,7 @@ internal class XUnitLoggerAdapter : ILogger
         return new Scope(() => Interlocked.Decrement(ref _indent));
     }
 
+    [Pure]
     public bool IsEnabled(LogLevel logLevel) 
         => logLevel switch
         {

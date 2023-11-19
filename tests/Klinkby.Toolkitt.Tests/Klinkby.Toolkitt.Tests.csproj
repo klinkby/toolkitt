@@ -22,8 +22,4 @@
     <ProjectReference Include="..\..\src\Klinkby.Toolkitt\Klinkby.Toolkitt.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="TestResults\" />
-  </ItemGroup>
-
 </Project>
