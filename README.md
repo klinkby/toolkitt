@@ -15,6 +15,7 @@ Just an evolving collection of general purpose coding productivity tools.
 - Apply, Curry, Uncurry for `Func<T>`
 - Apply for `Action<T>`
 - Adapter for passing Extensions.ILogger to XUnit
+- Efficient monads for `Implementation<T>` and `Either` (`Left` / `Right`)
 
 ## License
 
