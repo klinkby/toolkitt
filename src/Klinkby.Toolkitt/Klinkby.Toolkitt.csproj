@@ -13,9 +13,9 @@
         <AssemblyName>Klinkby.Toolkitt</AssemblyName>
         <AssemblyTitle>Klinkby.Toolkitt</AssemblyTitle>
         <PackageId>Klinkby.Toolkitt</PackageId>
-        <PackageVersion>1.2.0</PackageVersion>
+        <PackageVersion>1.3.0</PackageVersion>
         <PackageIcon>kitt.png</PackageIcon>
-        <PackageTags>Tool Utility Extension Guard String EventHandler</PackageTags>
+        <PackageTags>Tool Utility Extension Guard String EventHandler Base64Url Monad</PackageTags>
         <Description>Just an evolving collection of general purpose coding productivity tools</Description>
         <PackageLicenseFile>LICENSE</PackageLicenseFile>
         <PackageReadmeFile>README.md</PackageReadmeFile>

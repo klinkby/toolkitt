@@ -2,25 +2,36 @@
 
 [![NuGet](https://img.shields.io/nuget/v/Klinkby.Toolkitt.svg)](https://www.nuget.org/packages/Klinkby.Toolkitt/)
 [![Workflow](https://github.com/klinkby/toolkitt/actions/workflows/dotnet.yml/badge.svg)](https://github.com/klinkby/toolkitt/actions/workflows/dotnet.yml)
+[![CodeQL](https://github.com/klinkby/toolkitt/actions/workflows/github-code-scanning/codeql/badge.svg)](https://github.com/klinkby/toolkitt/actions/workflows/github-code-scanning/codeql)
+[![License](https://img.shields.io/github/license/klinkby/toolkitt.svg)](LICENSE)
 
 ## Summary
 
 Just an evolving collection of general purpose coding productivity tools.
 \>95% test coverage.
 
+
 ## Contents
 
 - Explicit parameter validation guard extension methods
-- Thread safe event raiser extension methods
-- Apply, Curry, Uncurry for `Func<T>`
-- Apply for `Action<T>`
-- Adapter for passing Extensions.ILogger to XUnit
-- Efficient monads for `Implementation<T>` and `Either` (`Left` / `Right`)
+- Thread-safe event raiser extension methods
+- Apply, Curry, Uncurry extension methods for `Func<T>`
+- Apply for extension methods `Action<T>`
+- Monads `Identity<T>` and `Either<T>` (`Left<T>` / `Right<T>`)
+- Base64 URL encoding/decoding
+- Adapter for passing Microsoft.Extensions.ILogger output to XUnit console
+
+
+## Package
+
+Nuget package: [Klinkby.Toolkitt](https://www.nuget.org/packages/Klinkby.Toolkitt/) for .NET 6 and .NET 8
+
 
 ## License
 
 MIT licensed. See [LICENSE](LICENSE) for details.
 
+
 ## Dependencies
 
-- dotnet6
+- dotnet6 / dotnet 8
