@@ -29,7 +29,7 @@ Nuget package: [Klinkby.Toolkitt](https://www.nuget.org/packages/Klinkby.Toolkit
 
 ## License
 
-MIT licensed. See [LICENSE](LICENSE) for details.
+MIT licensed. See [LICENSE](https://github.com/klinkby/toolkitt/blob/main/LICENSE) for details.
 
 
 ## Dependencies
