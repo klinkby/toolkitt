@@ -23,6 +23,15 @@ public static class Identity
 /// <typeparam name="T">Value type</typeparam>
 /// <seealso cref="Identity"/>
 /// <seealso cref="Either{T}"/>
+/// <example><code><!--
+///  double Calculate(double y)
+/// {
+///     var result = Identity.From(y)
+///         .Bind(x =&gt; x - 2)
+///         .Bind(Math.Sin);
+///     return result.Value;
+/// }
+/// --></code></example>
 public readonly ref struct Identity<T>
 {
     private readonly T _value;
