@@ -5,7 +5,7 @@
 /// </summary>
 public static class Base64Url
 {
-    private const int MaxStackAlloc = 1024;
+    private const int MaxStackAlloc = 256 / sizeof(char);
 
     /// <summary>
     /// Encode a binary blob to the URL-friendly variant of base64 (RFC 4648 §5).
