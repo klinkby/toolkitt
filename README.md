@@ -7,7 +7,7 @@
 
 ## Summary
 
-Just an evolving collection of general purpose coding productivity tools.
+Just an evolving collection of AOT-friendly general purpose coding productivity tools.
 \>95% test coverage.
 
 
