@@ -19,8 +19,8 @@ Just an evolving collection of general purpose coding productivity tools.
 - Apply for extension methods `Action<T>`
 - Monads `Identity<T>` and `Either<T>` (`Left<T>` / `Right<T>`)
 - Base64 URL encoding/decoding
+- DateTime extension methods e.g. safely formatting UTC date 
 - Adapter for passing Microsoft.Extensions.ILogger output to XUnit console
-
 
 ## Package
 
