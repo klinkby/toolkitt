@@ -21,6 +21,7 @@ Just an evolving collection of AOT-friendly general purpose coding productivity 
 - Base64 URL encoding/decoding
 - DateTime extension methods e.g. safely formatting UTC date 
 - Adapter for passing Microsoft.Extensions.ILogger output to XUnit console
+- Create Tuple from IEnumerable
 
 ## Package
 
