@@ -13,7 +13,7 @@
         <AssemblyName>Klinkby.Toolkitt</AssemblyName>
         <AssemblyTitle>Klinkby.Toolkitt</AssemblyTitle>
         <PackageId>Klinkby.Toolkitt</PackageId>
-        <PackageVersion>1.6.0</PackageVersion>
+        <PackageVersion>1.7.0</PackageVersion>
         <PackageIcon>kitt.png</PackageIcon>
         <PackageTags>Tool Utility Extension Guard String EventHandler Base64Url Monad Tuple</PackageTags>
         <Description>Just an evolving collection of general purpose coding productivity tools</Description>
