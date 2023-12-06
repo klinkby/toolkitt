@@ -24,9 +24,11 @@ public class XUnitLoggerAdapter_Should_Write
         
         // act
         var dut = mock.Object.ToILogger(separator: separator);
-        using var scope = dut.BeginScope(this);
-        dut.LogWarning("test {no}", 42);
-        
+        using (var scope = dut.BeginScope(this))
+        {
+            dut.LogWarning("test {no}", 42);
+        }
+
         // assert
         mock.VerifyAll();
     }
@@ -60,6 +62,19 @@ public class XUnitLoggerAdapter_Should_Write
         
         // assert
         mock.Verify(x => x.WriteLine(It.IsAny<string>()), Times.Never());
+    }
+
+    [Fact]
+    public void LogLevel_Should_Enable()
+    {
+        // arrange
+        var mock = new Mock<ITestOutputHelper>();
+        
+        // act
+        var dut = mock.Object.ToILogger(LogLevel.Information);
+        
+        // assert
+        Assert.True(dut.IsEnabled(LogLevel.Information));
     }
 
     [Trait("Category", "Unit")]

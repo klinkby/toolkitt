@@ -19,11 +19,12 @@ public class ValueTupleFactory_TryToValueTuple
     }
     
     [Theory]
+    [InlineData("")]
     [InlineData("1")]
     public void Two_Should_Return_False(string data)
     {
         // arrange
-        var collection = data.Split(',').Select(int.Parse);
+        var collection = Generate(data);
         
         // act
         bool result = collection.TryToValueTuple<int>(out (int, int) actual);
@@ -51,12 +52,13 @@ public class ValueTupleFactory_TryToValueTuple
     }
         
     [Theory]
+    [InlineData("")]
     [InlineData("1")]
     [InlineData("1,2")]
     public void Three_Should_Return_False(string data)
     {
         // arrange
-        var collection = data.Split(',').Select(int.Parse);
+        var collection = Generate(data);
         
         // act
         bool result = collection.TryToValueTuple<int>(out (int, int, int) actual);
@@ -86,13 +88,14 @@ public class ValueTupleFactory_TryToValueTuple
     }
     
     [Theory]
+    [InlineData("")]
     [InlineData("1")]
     [InlineData("1,2")]
     [InlineData("1,2,3")]
     public void Four_Should_Return_False(string data)
     {
         // arrange
-        var collection = data.Split(',').Select(int.Parse);
+        var collection = Generate(data);
         
         // act
         bool result = collection.TryToValueTuple<int>(out (int, int, int, int) actual);
@@ -124,6 +127,7 @@ public class ValueTupleFactory_TryToValueTuple
     }
     
     [Theory]
+    [InlineData("")]
     [InlineData("1")]
     [InlineData("1,2")]
     [InlineData("1,2,3")]
@@ -131,7 +135,7 @@ public class ValueTupleFactory_TryToValueTuple
     public void Five_Should_Return_False(string data)
     {
         // arrange
-        var collection = data.Split(',').Select(int.Parse);
+        var collection = Generate(data);
         
         // act
         bool result = collection.TryToValueTuple<int>(out (int, int, int, int, int) actual);
@@ -165,6 +169,7 @@ public class ValueTupleFactory_TryToValueTuple
     }
     
     [Theory]
+    [InlineData("")]
     [InlineData("1")]
     [InlineData("1,2")]
     [InlineData("1,2,3")]
@@ -173,7 +178,7 @@ public class ValueTupleFactory_TryToValueTuple
     public void Six_Should_Return_False(string data)
     {
         // arrange
-        var collection = data.Split(',').Select(int.Parse);
+        var collection = Generate(data);
         
         // act
         bool result = collection.TryToValueTuple<int>(out (int, int, int, int, int, int) actual);
@@ -209,6 +214,7 @@ public class ValueTupleFactory_TryToValueTuple
     }
     
     [Theory]
+    [InlineData("")]
     [InlineData("1")]
     [InlineData("1,2")]
     [InlineData("1,2,3")]
@@ -218,7 +224,7 @@ public class ValueTupleFactory_TryToValueTuple
     public void Seven_Should_Return_False(string data)
     {
         // arrange
-        var collection = data.Split(',').Select(int.Parse);
+        var collection = Generate(data);
         
         // act
         bool result = collection.TryToValueTuple<int>(out (int, int, int, int, int, int, int) actual);
@@ -232,5 +238,11 @@ public class ValueTupleFactory_TryToValueTuple
         Assert.Equal(default, actual.Item5);
         Assert.Equal(default, actual.Item6);
         Assert.Equal(default, actual.Item7);       
+    }
+    
+    private static IEnumerable<int> Generate(string data)
+    {
+        var collection = 0 != data.Length ? data.Split(',').Select(int.Parse) : Array.Empty<int>();
+        return collection;
     }
 }
