@@ -13,7 +13,7 @@
         <AssemblyName>Klinkby.Toolkitt</AssemblyName>
         <AssemblyTitle>Klinkby.Toolkitt</AssemblyTitle>
         <PackageId>Klinkby.Toolkitt</PackageId>
-        <PackageVersion>1.7.0</PackageVersion>
+        <PackageVersion>1.7.1</PackageVersion>
         <PackageIcon>kitt.png</PackageIcon>
         <PackageTags>Tool Utility Extension Guard String EventHandler Base64Url Monad Tuple</PackageTags>
         <Description>Just an evolving collection of general purpose coding productivity tools</Description>
@@ -28,6 +28,10 @@
     </ItemGroup>
 
     <ItemGroup>
+        <PackageReference Include="DotNet.ReproducibleBuilds" Version="1.1.1">
+          <PrivateAssets>all</PrivateAssets>
+          <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
         <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="6.0.0"/>
         <PackageReference Include="xunit.abstractions" Version="2.0.1"/>
     </ItemGroup>
