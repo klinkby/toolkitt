@@ -32,7 +32,9 @@ public class Identity_Bind
             _ = dut1.Bind(new Func<int, string>(_ => throw new InvalidOperationException()))
                     .Bind(_ => called = true); 
         }
+#pragma warning disable CA1031
         catch (Exception e)
+#pragma warning restore CA1031
         {
             ex = e;
         }

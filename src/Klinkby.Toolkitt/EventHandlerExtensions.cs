@@ -6,6 +6,7 @@
 /// <summary>Raises events</summary>
 public static class EventHandlerExtensions
 {
+#pragma warning disable CA1030
     /// <summary>
     ///     Invoke an event handler, thread safe.
     /// </summary>
@@ -25,7 +26,6 @@ public static class EventHandlerExtensions
     /// </example>
     public static void Raise(this EventHandler? eh, object sender, EventArgs args) 
         => Interlocked.CompareExchange(ref eh, null, null)?.Invoke(sender, args);
-
     /// <summary>
     ///     Invoke an event handler, thread safe.
     /// </summary>
@@ -60,4 +60,5 @@ public static class EventHandlerExtensions
     /// </example>
     public static void Raise<T>(this EventHandler<T>? eh, object sender, T args) where T : EventArgs 
         => Interlocked.CompareExchange(ref eh, null, null)?.Invoke(sender, args);
+#pragma warning restore CA1030
 }

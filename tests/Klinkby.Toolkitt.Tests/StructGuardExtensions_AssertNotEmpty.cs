@@ -1,9 +1,9 @@
 namespace Klinkby.Toolkitt.Tests;
 
+[Trait("Category", "Unit")]
 public class StructGuardExtensions_AssertNotEmpty
 {
     [Theory]
-    [Trait("Category", "Unit")]
     [InlineData(0)]
     public void Empty_Should_Throw(int myParameter)
     {
@@ -13,7 +13,6 @@ public class StructGuardExtensions_AssertNotEmpty
     }
 
     [Theory]
-    [Trait("Category", "Unit")]
     [InlineData(42)]
     public void NotEmpty_Should_Ok(int myParameter)
     {

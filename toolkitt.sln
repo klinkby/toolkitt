@@ -6,6 +6,9 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Klinkby.Toolkitt", "src\Klinkby.Toolkitt\Klinkby.Toolkitt.csproj", "{2239F691-031E-4CFE-BBCD-F9A87A9618BF}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{B30B23F7-13FF-4110-AF66-CE29CD587EE6}"
+	ProjectSection(SolutionItems) = preProject
+		tests\.editorconfig = tests\.editorconfig
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Klinkby.Toolkitt.Tests", "tests\Klinkby.Toolkitt.Tests\Klinkby.Toolkitt.Tests.csproj", "{21BC34CB-72AD-4548-BA52-FA12CFF24537}"
 EndProject

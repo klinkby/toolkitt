@@ -1,9 +1,9 @@
 namespace Klinkby.Toolkitt.Tests;
 
+[Trait("Category", "Unit")]
 public class FuncExtensions_Apply
 {
     [Fact]
-    [Trait("Category", "Unit")]
     public void One_On_One_Should_Apply()
     {
         var fn = (int a) => a;
@@ -12,7 +12,6 @@ public class FuncExtensions_Apply
     }
 
     [Fact]
-    [Trait("Category", "Unit")]
     public void One_On_Two_Should_Apply()
     {
         var fn = (int a, int b) => a + b;
@@ -21,7 +20,6 @@ public class FuncExtensions_Apply
     }
 
     [Fact]
-    [Trait("Category", "Unit")]
     public void Two_On_Two_Should_Apply()
     {
         var fn = (int a, int b) => a + b;
@@ -30,7 +28,6 @@ public class FuncExtensions_Apply
     }
 
     [Fact]
-    [Trait("Category", "Unit")]
     public void One_On_Three_Should_Apply()
     {
         var fn = (int a, int b, int c) => a + b + c;
@@ -39,7 +36,6 @@ public class FuncExtensions_Apply
     }
 
     [Fact]
-    [Trait("Category", "Unit")]
     public void Two_On_Three_Should_Apply()
     {
         var fn = (int a, int b, int c) => a + b + c;
@@ -48,7 +44,6 @@ public class FuncExtensions_Apply
     }
 
     [Fact]
-    [Trait("Category", "Unit")]
     public void Three_On_Three_Should_Apply()
     {
         var fn = (int a, int b, int c) => a + b + c;

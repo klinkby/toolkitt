@@ -55,7 +55,7 @@ internal class XUnitLoggerAdapter : ILogger
     }
 }
 
-internal class XUnitLoggerAdapter<T> : XUnitLoggerAdapter, ILogger<T>
+internal sealed class XUnitLoggerAdapter<T> : XUnitLoggerAdapter, ILogger<T>
 {
     public XUnitLoggerAdapter(ITestOutputHelper logger, LogLevel minimumLogLevel, string separator)
         : base(logger, minimumLogLevel, separator)

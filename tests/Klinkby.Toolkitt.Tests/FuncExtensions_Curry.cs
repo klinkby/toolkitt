@@ -1,9 +1,9 @@
 namespace Klinkby.Toolkitt.Tests;
 
+[Trait("Category", "Unit")]
 public class FuncExtensions_Curry
 {
     [Fact]
-    [Trait("Category", "Unit")]
     public void Curry_Two_Should_Uncurry()
     {
         var fn = (int a, int b) => a + b;
@@ -13,7 +13,6 @@ public class FuncExtensions_Curry
     }
 
     [Fact]
-    [Trait("Category", "Unit")]
     public void Curry_Three_Should_UnCurry()
     {
         var fn = (int a, int b, int c) => a + b + c;

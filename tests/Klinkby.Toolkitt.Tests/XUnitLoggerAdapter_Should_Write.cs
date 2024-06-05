@@ -4,6 +4,7 @@ using Xunit.Abstractions;
 
 namespace Klinkby.Toolkitt.Tests;
 
+[Trait("Category", "Unit")]
 public class XUnitLoggerAdapter_Should_Write
 {
     private readonly ITestOutputHelper _output;
@@ -11,7 +12,6 @@ public class XUnitLoggerAdapter_Should_Write
     public XUnitLoggerAdapter_Should_Write(ITestOutputHelper output) 
         => _output = output;
     
-    [Trait("Category", "Unit")]
     [Theory]
     [InlineData("\t")]
     [InlineData(";")]
@@ -24,16 +24,15 @@ public class XUnitLoggerAdapter_Should_Write
         
         // act
         var dut = mock.Object.ToILogger(separator: separator);
-        using (var scope = dut.BeginScope(this))
+        using (dut.BeginScope(this))
         {
-            dut.LogWarning("test {no}", 42);
+            dut.LogWarning("test {No}", 42);
         }
 
         // assert
         mock.VerifyAll();
     }
     
-    [Trait("Category", "Unit")]
     [Fact]
     public void LogT_Should_BeGeneric()
     {
@@ -47,7 +46,6 @@ public class XUnitLoggerAdapter_Should_Write
         Assert.IsAssignableFrom<ILogger<XUnitLoggerAdapter_Should_Write>>(dut);
     }
     
-    [Trait("Category", "Unit")]
     [Theory]
     [InlineData(LogLevel.None)]
     [InlineData(LogLevel.Warning)]
@@ -58,7 +56,7 @@ public class XUnitLoggerAdapter_Should_Write
         
         // act
         var dut = mock.Object.ToILogger(logLevel);
-        dut.LogInformation("test {no}", 42);
+        dut.LogInformation("test {No}", 42);
         
         // assert
         mock.Verify(x => x.WriteLine(It.IsAny<string>()), Times.Never());
@@ -77,7 +75,6 @@ public class XUnitLoggerAdapter_Should_Write
         Assert.True(dut.IsEnabled(LogLevel.Information));
     }
 
-    [Trait("Category", "Unit")]
     [Theory]
     [InlineData("Foo")]
     public void Log_Should_Not_Throw(string message)
@@ -87,7 +84,7 @@ public class XUnitLoggerAdapter_Should_Write
         
         // act
         var exception = Record.Exception(() => 
-            logger.LogInformation(message)
+            logger.LogInformation("{Mesage}", message)
         );
 
         // assert

@@ -1,5 +1,6 @@
 ﻿namespace Klinkby.Toolkitt.Tests;
 
+[Trait("Category", "Unit")]
 public class ValueTupleEnumerator_ToEnumerable
 {
     [Fact]

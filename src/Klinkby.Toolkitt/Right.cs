@@ -27,7 +27,9 @@ public sealed record Right<T> : Either<T>
                 ? Left<TResult>.Empty
                 : new Right<TResult>(result);
         }
+#pragma warning disable CA1031
         catch (Exception e)
+#pragma warning restore CA1031
         {
             return new Left<TResult>(e);
         }

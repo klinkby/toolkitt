@@ -1,9 +1,9 @@
 namespace Klinkby.Toolkitt.Tests;
 
+[Trait("Category", "Unit")]
 public class ActionExtensions_Apply
 {
     [Fact]
-    [Trait("Category", "Unit")]
     public void One_On_One_Should_Apply()
     {
         int result = 0;
@@ -13,7 +13,6 @@ public class ActionExtensions_Apply
     }
 
     [Fact]
-    [Trait("Category", "Unit")]
     public void One_On_Two_Should_Apply()
     {
         int result = 0;
@@ -23,7 +22,6 @@ public class ActionExtensions_Apply
     }
 
     [Fact]
-    [Trait("Category", "Unit")]
     public void Two_On_Two_Should_Apply()
     {
         int result = 0;
@@ -33,7 +31,6 @@ public class ActionExtensions_Apply
     }
 
     [Fact]
-    [Trait("Category", "Unit")]
     public void One_On_Three_Should_Apply()
     {
         int result = 0;
@@ -43,7 +40,6 @@ public class ActionExtensions_Apply
     }
 
     [Fact]
-    [Trait("Category", "Unit")]
     public void Two_On_Three_Should_Apply()
     {
         int result = 0;
@@ -53,7 +49,6 @@ public class ActionExtensions_Apply
     }
 
     [Fact]
-    [Trait("Category", "Unit")]
     public void Three_On_Three_Should_Apply()
     {
         int result = 0;

@@ -30,7 +30,7 @@ public class Either_Bind
         var actual = dut.Bind(x => x - 2)
             .Bind(x => default(string))
 #pragma warning disable CS8602 // Dereference of a possibly null reference.
-            .Bind(x => x.ToLower())
+            .Bind(x => x.ToUpperInvariant())
 #pragma warning restore CS8602 // Dereference of a possibly null reference.
             .Bind<string>(_ => throw new ArithmeticException()); // not called
         

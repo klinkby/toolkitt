@@ -1,14 +1,15 @@
 namespace Klinkby.Toolkitt.Tests;
 
+[Trait("Category", "Unit")]
 public class EventHandlerExtensions_Raise_T
 {
     private static readonly EventArgsMock EventArgsObj = new EventArgsMock();
 
-    private class EventArgsMock : EventArgs
+    private sealed class EventArgsMock : EventArgs
     { 
     }
 
-    private class EventMock
+    private sealed class EventMock
     {
         public void OnInvoked() => Invoked.Raise(this, EventArgsObj);
 #pragma warning disable S3264 // Events should be invoked
@@ -17,7 +18,6 @@ public class EventHandlerExtensions_Raise_T
     }
 
     [Fact]
-    [Trait("Category", "Unit")]
     public void NoListener_Should_DoNothing()
     {
         var mock = new EventMock();
@@ -26,7 +26,6 @@ public class EventHandlerExtensions_Raise_T
     }
 
     [Fact]
-    [Trait("Category", "Unit")]
     public void Subscriber_Should_Raise()
     {
         int times = 0;
@@ -44,7 +43,6 @@ public class EventHandlerExtensions_Raise_T
     }
 
     [Fact]
-    [Trait("Category", "Unit")]
     public void Unsubscriber_Should_DoNothing()
     {
         int times = 0;

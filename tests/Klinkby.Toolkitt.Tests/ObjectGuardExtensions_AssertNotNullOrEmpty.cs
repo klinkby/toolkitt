@@ -1,9 +1,9 @@
 namespace Klinkby.Toolkitt.Tests;
 
+[Trait("Category", "Unit")]
 public class ObjectGuardExtensions_AssertNotNullOrEmpty
 {
     [Theory]
-    [Trait("Category", "Unit")]
     [InlineData(null)]
     public void Null_Should_Throw(string? myParameter)
     {
@@ -13,7 +13,6 @@ public class ObjectGuardExtensions_AssertNotNullOrEmpty
     }
 
     [Theory]
-    [Trait("Category", "Unit")]
     [InlineData("")]
     public void Empty_Should_Throw(string? myParameter)
     {
@@ -23,7 +22,6 @@ public class ObjectGuardExtensions_AssertNotNullOrEmpty
     }
 
     [Theory]
-    [Trait("Category", "Unit")]
     [InlineData("foo")]
     public void NotNull_Should_Ok(string? myParameter)
     {

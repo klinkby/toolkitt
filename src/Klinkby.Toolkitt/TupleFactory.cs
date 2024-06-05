@@ -1,4 +1,6 @@
-﻿namespace Klinkby.Toolkitt;
+﻿using System.Diagnostics;
+
+namespace Klinkby.Toolkitt;
 
 /// <summary>
 ///     Extensions methods for converting IEnumerable{T} to Tuple{T}
@@ -14,6 +16,7 @@ public static class TupleFactory
     /// <returns>True if all the tuple's values could be read</returns>
     public static bool TryToTuple<T>(this IEnumerable<T> collection, [NotNullWhen(true)] out Tuple<T, T>? tuple)
     {
+        Debug.Assert(collection != null, nameof(collection) + " != null");
         using var e = collection.GetEnumerator();
         if (!e.MoveNext())
         {
@@ -42,6 +45,7 @@ public static class TupleFactory
     /// <returns>True if all the tuple's values could be read</returns>
     public static bool TryToTuple<T>(this IEnumerable<T> collection, [NotNullWhen(true)] out Tuple<T, T, T>? tuple)
     {
+        Debug.Assert(collection != null, nameof(collection) + " != null");
         using var e = collection.GetEnumerator();
         if (!e.MoveNext())
         {
@@ -77,6 +81,7 @@ public static class TupleFactory
     /// <returns>True if all the tuple's values could be read</returns>
     public static bool TryToTuple<T>(this IEnumerable<T> collection, [NotNullWhen(true)] out Tuple<T, T, T, T>? tuple)
     {
+        Debug.Assert(collection != null, nameof(collection) + " != null");
         using var e = collection.GetEnumerator();
         if (!e.MoveNext())
         {
@@ -119,6 +124,7 @@ public static class TupleFactory
     /// <returns>True if all the tuple's values could be read</returns>
     public static bool TryToTuple<T>(this IEnumerable<T> collection, [NotNullWhen(true)] out Tuple<T, T, T, T, T>? tuple)
     {
+        Debug.Assert(collection != null, nameof(collection) + " != null");
         using var e = collection.GetEnumerator();
         if (!e.MoveNext())
         {
@@ -168,6 +174,7 @@ public static class TupleFactory
     /// <returns>True if all the tuple's values could be read</returns>
     public static bool TryToTuple<T>(this IEnumerable<T> collection, [NotNullWhen(true)] out Tuple<T, T, T, T, T, T>? tuple)
     {
+        Debug.Assert(collection != null, nameof(collection) + " != null");
         using var e = collection.GetEnumerator();
         if (!e.MoveNext())
         {
@@ -225,6 +232,7 @@ public static class TupleFactory
     /// <returns>True if all the tuple's values could be read</returns>
     public static bool TryToTuple<T>(this IEnumerable<T> collection, [NotNullWhen(true)] out Tuple<T, T, T, T, T, T, T>? tuple)
     {
+        Debug.Assert(collection != null, nameof(collection) + " != null");
         using var e = collection.GetEnumerator();
         if (!e.MoveNext())
         {

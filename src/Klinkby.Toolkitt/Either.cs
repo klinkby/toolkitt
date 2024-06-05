@@ -1,4 +1,5 @@
-﻿using System.Diagnostics.Contracts;
+﻿using System.Diagnostics;
+using System.Diagnostics.Contracts;
 
 namespace Klinkby.Toolkitt;
 
@@ -38,14 +39,19 @@ public abstract record Either
 /// --></code></example>
 public abstract record Either<T> : Either
 {
+#pragma warning disable CA2225
     /// <summary>
     /// Cast Either to value
     /// </summary>
     /// <param name="me">Either to get value from</param>
     /// <returns>Value of Either</returns>
     [Pure]
-    public static implicit operator T(Either<T> me) => me.Value;
-    
+    public static implicit operator T(Either<T> me)
+    {
+        Debug.Assert(me != null, nameof(me) + " != null");
+        return me.Value;
+    }
+
     /// <summary>
     /// Cast value to Either
     /// </summary>
@@ -53,6 +59,7 @@ public abstract record Either<T> : Either
     /// <returns>Either with value</returns>
     [Pure]
     public static implicit operator Either<T>(T value) => From(value);
+#pragma warning restore CA2225
 
     internal Either()
     {

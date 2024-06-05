@@ -1,4 +1,5 @@
-﻿using System.Diagnostics.Contracts;
+﻿using System.Diagnostics;
+using System.Diagnostics.Contracts;
 
 namespace Klinkby.Toolkitt;
 
@@ -51,8 +52,13 @@ public readonly ref struct Identity<T>
     /// <typeparam name="TResult"></typeparam>
     /// <returns></returns>
     [Pure]
-    public Identity<TResult> Bind<TResult>(Func<T, TResult> f) => f(_value);
-    
+    public Identity<TResult> Bind<TResult>(Func<T, TResult> f)
+    {
+        Debug.Assert(f != null, nameof(f) + " != null");
+        return f(_value);
+    }
+
+#pragma warning disable CA2225
     /// <summary>
     /// Cast to value
     /// </summary>
@@ -68,4 +74,5 @@ public readonly ref struct Identity<T>
     /// <returns>A new Identity</returns>
     [Pure]
     public static implicit operator Identity<T>(T value) => new(value);
+#pragma warning restore CA2225
 }

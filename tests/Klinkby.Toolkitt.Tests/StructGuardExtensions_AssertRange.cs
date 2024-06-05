@@ -1,5 +1,6 @@
 namespace Klinkby.Toolkitt.Tests;
 
+[Trait("Category", "Unit")]
 public class StructGuardExtensions_AssertRange
 {
 
@@ -7,7 +8,6 @@ public class StructGuardExtensions_AssertRange
     const int RangeHi = 10;
 
     [Theory]
-    [Trait("Category", "Unit")]
     [InlineData(RangeLo - 1)]
     [InlineData(RangeHi + 1)]
     public void LowerOrHigher_Should_Throw(int myParameter)
@@ -18,7 +18,6 @@ public class StructGuardExtensions_AssertRange
     }
 
     [Theory]
-    [Trait("Category", "Unit")]
     [InlineData(101)]
     public void In_Should_Throw(int myParameter)
     {
@@ -28,7 +27,6 @@ public class StructGuardExtensions_AssertRange
     }
 
     [Theory]
-    [Trait("Category", "Unit")]
     [InlineData(RangeLo)]
     [InlineData((RangeHi + RangeLo) / 2)] // in between
     [InlineData(RangeHi)]

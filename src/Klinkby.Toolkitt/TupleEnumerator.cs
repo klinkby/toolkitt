@@ -1,4 +1,6 @@
-﻿namespace Klinkby.Toolkitt;
+﻿using System.Diagnostics;
+
+namespace Klinkby.Toolkitt;
 
 /// <summary>
 /// Provide extension methods for enumerating values of tuples that have a single item type.
@@ -13,6 +15,7 @@ public static class TupleEnumerator
     /// <returns>Enumerable items</returns>
     public static IEnumerable<T> ToEnumerable<T>(this Tuple<T, T> tuple)
     {
+        Debug.Assert(tuple != null, nameof(tuple) + " != null");
         yield return tuple.Item1;
         yield return tuple.Item2;
     }
@@ -25,6 +28,7 @@ public static class TupleEnumerator
     /// <returns>Enumerable items</returns>
     public static IEnumerable<T> ToEnumerable<T>(this Tuple<T, T, T> tuple)
     {
+        Debug.Assert(tuple != null, nameof(tuple) + " != null");
         yield return tuple.Item1;
         yield return tuple.Item2;
         yield return tuple.Item3;
@@ -38,6 +42,7 @@ public static class TupleEnumerator
     /// <returns>Enumerable items</returns>
     public static IEnumerable<T> ToEnumerable<T>(this Tuple<T, T, T, T> tuple)
     {
+        Debug.Assert(tuple != null, nameof(tuple) + " != null");
         yield return tuple.Item1;
         yield return tuple.Item2;
         yield return tuple.Item3;
@@ -52,6 +57,7 @@ public static class TupleEnumerator
     /// <returns>Enumerable items</returns>
     public static IEnumerable<T> ToEnumerable<T>(this Tuple<T, T, T, T, T> tuple)
     {
+        Debug.Assert(tuple != null, nameof(tuple) + " != null");
         yield return tuple.Item1;
         yield return tuple.Item2;
         yield return tuple.Item3;
@@ -67,6 +73,7 @@ public static class TupleEnumerator
     /// <returns>Enumerable items</returns>
     public static IEnumerable<T> ToEnumerable<T>(this Tuple<T, T, T, T, T, T> tuple)
     {
+        Debug.Assert(tuple != null, nameof(tuple) + " != null");
         yield return tuple.Item1;
         yield return tuple.Item2;
         yield return tuple.Item3;
@@ -83,6 +90,7 @@ public static class TupleEnumerator
     /// <returns>Enumerable items</returns>
     public static IEnumerable<T> ToEnumerable<T>(this Tuple<T, T, T, T, T, T, T> tuple)
     {
+        Debug.Assert(tuple != null, nameof(tuple) + " != null");
         yield return tuple.Item1;
         yield return tuple.Item2;
         yield return tuple.Item3;

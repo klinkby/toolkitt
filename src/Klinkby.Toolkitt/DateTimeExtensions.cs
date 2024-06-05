@@ -55,7 +55,7 @@ public static class DateTimeExtensions
     /// <param name="value">DateTime to convert</param>
     /// <param name="dateString">Result of formatting</param>
     /// <returns>True if the date could be formatted</returns>
-    public static bool TryFormatUtcDate(this DateTime value, out string? dateString)
+    public static bool TryFormatUtcDate(this DateTime value, [NotNullWhen(true)] out string? dateString)
     {
         if (value.IsUnspecifiedKind())
         {

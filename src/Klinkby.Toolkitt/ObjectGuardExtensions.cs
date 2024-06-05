@@ -1,4 +1,5 @@
-﻿using System.Text.RegularExpressions;
+﻿using System.Diagnostics;
+using System.Text.RegularExpressions;
 namespace Klinkby.Toolkitt;
 
 // hat tip to @oskardudycz@hachyderm.io
@@ -44,10 +45,13 @@ public static class ObjectGuardExtensions
     public static string AssertMatchesRegex(
         [NotNull] this string? value,
         Regex pattern,
-        [CallerArgumentExpression("value")] string? argumentName = null) => 
-        pattern.IsMatch(value ?? throw new ArgumentNullException(argumentName))
+        [CallerArgumentExpression("value")] string? argumentName = null)
+    {
+        Debug.Assert(pattern != null, nameof(pattern) + " != null");
+        return pattern.IsMatch(value ?? throw new ArgumentNullException(argumentName))
             ? value
-            : throw new ArgumentOutOfRangeException(argumentName);            
+            : throw new ArgumentOutOfRangeException(argumentName);
+    }
 
     /// <summary>
     /// Guard clause validate value is non-null and not an empty string

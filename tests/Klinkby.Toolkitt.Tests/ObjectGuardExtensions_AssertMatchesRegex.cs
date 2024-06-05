@@ -2,13 +2,13 @@ using System.Text.RegularExpressions;
 
 namespace Klinkby.Toolkitt.Tests;
 
+[Trait("Category", "Unit")]
 public partial class ObjectGuardExtensions_AssertMatchesRegex
 {
     [GeneratedRegex(@"^(\d)$", RegexOptions.IgnoreCase, "en-US")]
     private static partial Regex DigitRegex(); // code-gen
 
     [Theory]
-    [Trait("Category", "Unit")]
     [InlineData(null)]
     public void Null_Should_Throw(string? myParameter)
     {
@@ -17,7 +17,6 @@ public partial class ObjectGuardExtensions_AssertMatchesRegex
     }
 
     [Theory]
-    [Trait("Category", "Unit")]
     [InlineData("12")]
     [InlineData("a")]
     [InlineData("")]
@@ -28,7 +27,6 @@ public partial class ObjectGuardExtensions_AssertMatchesRegex
     }
 
     [Theory]
-    [Trait("Category", "Unit")]
     [InlineData("2")]
     public void SingleDigit_Should_Ok(string? myParameter)
     {
@@ -37,7 +35,6 @@ public partial class ObjectGuardExtensions_AssertMatchesRegex
     }
 
     [Theory]
-    [Trait("Category", "Unit")]
     [InlineData("2")]
     public void Regex_SingleDigit_Should_Ok(string? myParameter)
     {

@@ -19,6 +19,7 @@ public sealed record Left<T> : Either<T>
     [Pure]
     public Exception? Exception => _exception;
     
+#pragma warning disable CA1065
     /// <summary>
     /// Left monad has no meaningful value.
     /// Will throw the Exception value or <see cref="InvalidOperationException"/>.
@@ -26,6 +27,7 @@ public sealed record Left<T> : Either<T>
     /// <exception cref="InvalidOperationException"></exception>
     [Pure]
     public override T Value => throw _exception ?? new InvalidOperationException("Left has no value.");
+#pragma warning restore CA1065
     
     /// <inheritdoc />
     [Pure]

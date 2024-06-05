@@ -1,0 +1,14 @@
+# Test specific overrides to the default configuration
+[*.cs]
+
+# CA1707: Identifiers should not contain underscores
+# Writing test methods with underscores help readability
+dotnet_diagnostic.CA1707.severity = none
+
+# CA1848 : For improved performance, use the LoggerMessage delegates
+# This is a test project and performance is not a concern
+dotnet_diagnostic.CA1848.severity = none
+
+# CA1062: Validate arguments of public methods
+# This is a test project and argument validation is not necessary
+dotnet_diagnostic.CA1062.severity = none

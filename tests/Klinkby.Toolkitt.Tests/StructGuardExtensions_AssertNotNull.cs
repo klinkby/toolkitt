@@ -1,9 +1,9 @@
 namespace Klinkby.Toolkitt.Tests;
 
+[Trait("Category", "Unit")]
 public class StructGuardExtensions_AssertNotNull
 {
     [Theory]
-    [Trait("Category", "Unit")]
     [InlineData(null)]
     public void Null_Should_Throw(int? myParameter)
     {
@@ -13,7 +13,6 @@ public class StructGuardExtensions_AssertNotNull
     }
 
     [Theory]
-    [Trait("Category", "Unit")]
     [InlineData(42)]
     public void NotNull_Should_Ok(int? myParameter)
     {
