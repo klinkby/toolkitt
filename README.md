@@ -7,8 +7,8 @@
 
 ## Summary
 
-Just an evolving collection of AOT-friendly general purpose coding productivity tools.
-\>95% test coverage.
+Just an evolving collection of AOT-friendly general purpose coding productivity 
+tools. >95% test coverage, >80% [Stryker](https://stryker-mutator.io/) mutation score.
 
 
 ## Contents
@@ -25,7 +25,7 @@ Just an evolving collection of AOT-friendly general purpose coding productivity 
 
 ## Package
 
-Nuget package: [Klinkby.Toolkitt](https://www.nuget.org/packages/Klinkby.Toolkitt/) for .NET 6 and .NET 8
+Nuget package: [Klinkby.Toolkitt](https://www.nuget.org/packages/Klinkby.Toolkitt/) for netstandard2.1
 
 
 ## License
@@ -35,4 +35,4 @@ MIT licensed. See [LICENSE](https://github.com/klinkby/toolkitt/blob/main/LICENS
 
 ## Dependencies
 
-- dotnet6 / dotnet 8
+- netcore3.0 or later
