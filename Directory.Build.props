@@ -1,5 +1,5 @@
 <Project>
-    <Sdk Name="DotNet.ReproducibleBuilds.Isolated" Version="1.1.1" />
+    <Sdk Name="DotNet.ReproducibleBuilds.Isolated" Version="1.2.4" />
     
     <PropertyGroup>
         <TargetFramework>netstandard2.1</TargetFramework>
