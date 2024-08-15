@@ -16,7 +16,7 @@ public abstract record Either
     /// <returns>New Either</returns>
     public static Either<T> From<T>(T value) => IsDefault(value) ? Left<T>.Empty : new Right<T>(value);
 
-    internal static bool IsDefault<T>(T value) => EqualityComparer<T>.Default.Equals(default, value);
+    internal static bool IsDefault<T>(T value) => ReferenceEquals(default, value);
 }
 
 /// <summary>

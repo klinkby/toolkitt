@@ -43,4 +43,11 @@ public class Identity_Bind
         Assert.IsType<InvalidOperationException>(ex);
         Assert.False(called);
     }
+    
+    [Fact]
+    public void NullFunc_Should_Throw()
+    {
+        // arrange
+        Assert.Throws<ArgumentNullException>(() => Identity.From(Seed).Bind<string>(null!));
+    }
 }
